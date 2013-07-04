@@ -1,0 +1,5 @@
+
+database: humitsec
+table: emailcrypto
+user: 'humitsec'@'localhost'
+passwd: humitsecpasswd
