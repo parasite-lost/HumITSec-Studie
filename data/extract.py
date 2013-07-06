@@ -1,7 +1,8 @@
 #!/usr/bin/env python
+# vim: set fileencoding=utf-8
 # python version running: 2.7.5
-# -*- encoding: utf-8
 
+from __future__ import division
 import MySQLdb as mdb
 import sys
 
@@ -107,6 +108,54 @@ def betriebssystem(cur):
 		print i, " : ", oses[i]
 	print ""
 
+# count number of entries in database
+def countall(cur):
+	cur.execute("""select count(*) from %s""" % SQLTABLE)
+	return cur.fetchone()[0]
+
+# print number and percentage
+def pnumperc(num, absnum):
+	print "Anzahl: {:d}, Prozent: {:.2%}".format(num,(num / absnum))
+
+def countnoidea(cur):
+	cur.execute("""select count(*) from %s where was_email_krypto = 'Nein'""" % SQLTABLE)
+	num = cur.fetchone()[0]
+	absnum = countall(cur)
+	cur.execute("""select studienfach, os_name from %s where was_email_krypto = 'Nein'""" % SQLTABLE)
+	x = cur.fetchall()
+	stud = {}
+	for i in x:
+		st = subst(i[0])
+		if st in stud:
+			stud[st] += 1
+		else:
+			stud[st] = 1
+	print "Emailkryptographie unbekannt"
+	pnumperc(num, absnum)
+	for i in stud:
+		print i, "\t", stud[i]
+	print ""
+
+def countreglm(cur):
+	cur.execute("""select count(*) from %s where regelmaessig = 'Ja'""" % SQLTABLE)
+	num = cur.fetchone()[0]
+	absnum = countall(cur)
+	cur.execute("""select studienfach, os_name from %s where regelmaessig = 'Ja'""" % SQLTABLE)
+	x = cur.fetchall()
+	stud = {}
+	for i in x:
+		st = subst(i[0])
+		if st in stud:
+			stud[st] += 1
+		else:
+			stud[st] = 1
+	print "Emailkryptographie regelmäßig eingesetzt"
+	pnumperc(num, absnum)
+	for i in stud:
+		print i, "\t", stud[i]
+	print ""
+
+
 if __name__ == "__main__":
 	# connect to DB
 	con = None
@@ -124,9 +173,17 @@ if __name__ == "__main__":
 					cur.execute("""show columns from %s""" % SQLTABLE)
 					for i in cur.fetchall():
 						print i[0]
+				if sys.argv[1] == "count":
+					cur.execute("""select count(*) from %s""" % SQLTABLE)
+					print cur.fetchone()[0]
+				if sys.argv[1] == "exec":
+					cur.execute(sys.argv[2])
+					print cur.fetchall()
 			else:
 				studienfach(cur)
 				betriebssystem(cur)
+				countnoidea(cur)
+				countreglm(cur)
 			############################################
 			#                  end                     #
 			############################################
