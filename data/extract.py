@@ -136,11 +136,30 @@ def countnoidea(cur):
 		print i, "\t", stud[i]
 	print ""
 
+# print used clients for one line in database
+clientslist = ["Thunderbird", "Outlook", "Opera", "Windows Live Mail", "Evolution", "Seamonkey", "Webclient", "OS X Mail"]
+def pclients(entry, start, end):
+	for i in range(start, end):
+		if entry[i] == "Ja":
+			print clientslist[i-2],
+		elif entry[i] == "Nein" or entry[i] == None:
+			pass
+		else:
+			print entry[i],
+	print " ."
+
+# print all clients used
+def getclients(x, start, end):
+	for i in x:
+		pclients(i, start, end)
+
 def countreglm(cur):
 	cur.execute("""select count(*) from %s where regelmaessig = 'Ja'""" % SQLTABLE)
 	num = cur.fetchone()[0]
 	absnum = countall(cur)
-	cur.execute("""select studienfach, os_name from %s where regelmaessig = 'Ja'""" % SQLTABLE)
+	cur.execute("""select studienfach, os_name, client_thunderbird, client_outlook, client_opera,
+			client_winmail, client_evolution, client_seamonkey, client_webseite,
+			client_os_x_mail, client_sonstiges from %s where regelmaessig = 'Ja'""" % SQLTABLE)
 	x = cur.fetchall()
 	stud = {}
 	for i in x:
@@ -153,6 +172,7 @@ def countreglm(cur):
 	pnumperc(num, absnum)
 	for i in stud:
 		print i, "\t", stud[i]
+	getclients(x, 2, 11)
 	print ""
 
 

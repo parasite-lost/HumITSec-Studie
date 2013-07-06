@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `emailcrypt`
 `client_thunderbird` VARCHAR(255) NOT NULL, 
 `client_outlook` VARCHAR(255) NOT NULL, 
 `client_opera` VARCHAR(255) NOT NULL, 
-`client_win.l.mail` VARCHAR(255) NOT NULL, 
+`client_winmail` VARCHAR(255) NOT NULL, 
 `client_evolution` VARCHAR(255) NOT NULL, 
 `client_seamonkey` VARCHAR(255) NOT NULL, 
 `client_webseite` VARCHAR(255) NOT NULL, 
