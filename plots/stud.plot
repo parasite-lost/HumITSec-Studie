@@ -18,7 +18,6 @@ IPEM	4
 IuK	2
 IIS	2
 WInf	2
-Mathematik	1
+Mathematik	2
 SIM	1
 MAP	1
-Mathemaik	1
