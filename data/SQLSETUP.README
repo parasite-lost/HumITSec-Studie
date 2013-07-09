@@ -1,4 +1,3 @@
-
 database: humitsec
 table: emailcrypto
 user: 'humitsec'@'localhost'
@@ -8,4 +7,4 @@ SQL:
 > create database humitsec;
 > create user 'humitsec'@'localhost' identified by 'humitsecpasswd';
 > grant all on humitsec.* to 'humitsec'@'localhost';
-# mysql -u root -p humitsec < ....../your-converted-csv.sql
+# mysql -u root -p humitsec < /path/to/your-converted-csv.sql
