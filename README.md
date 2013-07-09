@@ -1,4 +1,7 @@
 HumITSec-Studie
 ===============
 
-HumITSec - Vortrag Studie: Emailkryptographie
+Studie: Emailkryptographie
+
+
+Auswertung der Daten, Vortragsfolien

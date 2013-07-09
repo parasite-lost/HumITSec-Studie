@@ -3,3 +3,4 @@ all:
 
 clean:
 	@rubber --clean slides.tex
+	@rm slides.vrb

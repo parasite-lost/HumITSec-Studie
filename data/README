@@ -1,0 +1,4 @@
+Rohdaten der Umfrage, als CVS-File und als SQL-Statements
+
+Um die Daten in eine SQL-Datenbank einzuspeisen bitte Anweisungen in der Datei
+"SQLSETUP.README" beachten

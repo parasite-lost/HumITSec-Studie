@@ -174,7 +174,7 @@ clientslist = ["Thunderbird", "Outlook", "Opera", "Windows Live Mail", "Evolutio
 def pclients(entry, start, end):
 	for i in range(start, end):
 		if entry[i] == "Ja":
-			print clientslist[i-2],
+			print clientslist[i-start],
 		elif entry[i] == "Nein" or entry[i] == None:
 			pass
 		else:
@@ -351,7 +351,234 @@ def countversucht(cur):
 	pnumperc(notvers, absnum)
 	print ""
 
+def info_jemalssend(cur):
+	cur.execute("""select studienfach, os_name, client_thunderbird, client_outlook, client_opera,
+			client_winmail, client_evolution, client_seamonkey, client_webseite,
+			client_os_x_mail, client_sonstiges from %s where jemals_send = 'Ja'""" % SQLTABLE)
+	x = cur.fetchall()
+	stud = {}
+	for i in x:
+		st = subst(i[0])
+		if st in stud:
+			stud[st] += 1
+		else:
+			stud[st] = 1
+	print "verschl. emails jemals gesendet -> Ja"
+	print "clients"
+	for i in x:
+		pclients(i, 2, 11)
+	print "studienfach"
+	for i in stud:
+		print i, "\t", stud[i]
+	print "os:"
+	for i in x:
+		print i[1]
+	print ""
 
+def info2_jemalssend(cur):
+	cur.execute("""select num_semester from %s where jemals_send = 'Ja'""" % SQLTABLE)
+	x = cur.fetchall()
+	sems = []
+	for i in x:
+		sems.append(i[0])
+	print "Semester:", sum(sems)/len(sems), "stddev:", sigma(sems), "max:", max(sems)
+	print ""
+
+def info_haskont(cur):
+	cur.execute("""select studienfach, num_semester, os_name, client_thunderbird, client_outlook, client_opera,
+			client_winmail, client_evolution, client_seamonkey, client_webseite,
+			client_os_x_mail, client_sonstiges from %s where kontakt = 'Ja'""" % SQLTABLE)
+	x = cur.fetchall()
+	stud = {}
+	for i in x:
+		st = subst(i[0])
+		if st in stud:
+			stud[st] += 1
+		else:
+			stud[st] = 1
+	print "kontakte vorhanden, keine verschl. mails"
+	print "clients"
+	for i in x:
+	    pclients(i, 3, 12)
+	print "os:"
+	for i in x:
+		print i[2]
+	print "studienfach"
+	for i in stud:
+		print i, "\t", stud[i]
+	sems = []
+	for i in x:
+		sems.append(i[1])
+	print "semester:", sum(sems)/len(sems), "stddev:", sigma(sems), "max:", max(sems)
+	print ""
+
+def info_nokont(cur):
+	cur.execute("""select studienfach, num_semester, os_name, client_thunderbird, client_outlook, client_opera,
+			client_winmail, client_evolution, client_seamonkey, client_webseite,
+			client_os_x_mail, client_sonstiges from %s where kontakt = 'Nein'""" % SQLTABLE)
+	x = cur.fetchall()
+	stud = {}
+	for i in x:
+		st = subst(i[0])
+		if st in stud:
+			stud[st] += 1
+		else:
+			stud[st] = 1
+	print "kontakte vorhanden, keine verschl. mails"
+	print "clients"
+	for i in x:
+	    pclients(i, 3, 12)
+	print "os:"
+	for i in x:
+		print i[2]
+	print "studienfach"
+	for i in stud:
+		print i, "\t", stud[i]
+	sems = []
+	for i in x:
+		sems.append(i[1])
+	print "semester:", sum(sems)/len(sems), "stddev:", sigma(sems), "max:", max(sems)
+	print ""
+
+def info_bewentf(cur):
+	cur.execute("""select studienfach, num_semester, os_name, client_thunderbird, client_outlook, client_opera,
+			client_winmail, client_evolution, client_seamonkey, client_webseite,
+			client_os_x_mail, client_sonstiges from %s where bewusst_entfernt = 'Ja'""" % SQLTABLE)
+	x = cur.fetchall()
+	stud = {}
+	for i in x:
+		st = subst(i[0])
+		if st in stud:
+			stud[st] += 1
+		else:
+			stud[st] = 1
+	print "system bewusst entfernt"
+	print "clients"
+	for i in x:
+	    pclients(i, 3, 12)
+	print "os:"
+	for i in x:
+		print i[2]
+	print "studienfach"
+	for i in stud:
+		print i, "\t", stud[i]
+	sems = []
+	for i in x:
+		sems.append(i[1])
+	print "semester:", sum(sems)/len(sems), "stddev:", sigma(sems), "max:", max(sems)
+	print ""
+
+def info_nobewentf(cur):
+	cur.execute("""select studienfach, num_semester, os_name, client_thunderbird, client_outlook, client_opera,
+			client_winmail, client_evolution, client_seamonkey, client_webseite,
+			client_os_x_mail, client_sonstiges from %s where bewusst_entfernt = 'Nein'""" % SQLTABLE)
+	x = cur.fetchall()
+	stud = {}
+	for i in x:
+		st = subst(i[0])
+		if st in stud:
+			stud[st] += 1
+		else:
+			stud[st] = 1
+	print "software unbewusst entfernt"
+	print "clients"
+	for i in x:
+	    pclients(i, 3, 12)
+	print "os:"
+	for i in x:
+		print i[2]
+	print "studienfach"
+	for i in stud:
+		print i, "\t", stud[i]
+	sems = []
+	for i in x:
+		sems.append(i[1])
+	print "semester:", sum(sems)/len(sems), "stddev:", sigma(sems), "max:", max(sems)
+	print ""
+
+def info_vers(cur):
+	cur.execute("""select studienfach, num_semester, os_name, client_thunderbird, client_outlook, client_opera,
+			client_winmail, client_evolution, client_seamonkey, client_webseite,
+			client_os_x_mail, client_sonstiges from %s where versucht = 'Ja'""" % SQLTABLE)
+	x = cur.fetchall()
+	stud = {}
+	for i in x:
+		st = subst(i[0])
+		if st in stud:
+			stud[st] += 1
+		else:
+			stud[st] = 1
+	print "installation versucht"
+	print "clients"
+	for i in x:
+		pclients(i, 3, 12)
+	print "os:"
+	for i in x:
+		print i[2]
+	print "studienfach"
+	for i in stud:
+		print i, "\t", stud[i]
+	sems = []
+	for i in x:
+		sems.append(i[1])
+	print "semester:", sum(sems)/len(sems), "stddev:", sigma(sems), "max:", max(sems)
+	print ""
+
+def info_novers(cur):
+	cur.execute("""select studienfach, num_semester, os_name, client_thunderbird, client_outlook, client_opera,
+			client_winmail, client_evolution, client_seamonkey, client_webseite,
+			client_os_x_mail, client_sonstiges from %s where versucht = 'Nein'""" % SQLTABLE)
+	x = cur.fetchall()
+	stud = {}
+	for i in x:
+		st = subst(i[0])
+		if st in stud:
+			stud[st] += 1
+		else:
+			stud[st] = 1
+	print "installation nie versucht"
+	print "clients"
+	for i in x:
+		pclients(i, 3, 12)
+	print "os:"
+	for i in x:
+		print i[2]
+	print "studienfach"
+	for i in stud:
+		print i, "\t", stud[i]
+	sems = []
+	for i in x:
+		sems.append(i[1])
+	print "semester:", sum(sems)/len(sems), "stddev:", sigma(sems), "max:", max(sems)
+	print ""
+
+def info_noplan(cur):
+	cur.execute("""select studienfach, num_semester, os_name, client_thunderbird, client_outlook, client_opera,
+			client_winmail, client_evolution, client_seamonkey, client_webseite,
+			client_os_x_mail, client_sonstiges from %s where geplant = 'Nein'""" % SQLTABLE)
+	x = cur.fetchall()
+	stud = {}
+	for i in x:
+		st = subst(i[0])
+		if st in stud:
+			stud[st] += 1
+		else:
+			stud[st] = 1
+	print "installation nie geplant"
+	print "clients"
+	for i in x:
+		pclients(i, 3, 12)
+	print "os:"
+	for i in x:
+		print i[2]
+	print "studienfach"
+	for i in stud:
+		print i, "\t", stud[i]
+	sems = []
+	for i in x:
+		sems.append(i[1])
+	print "semester:", sum(sems)/len(sems), "stddev:", sigma(sems), "max:", max(sems)
+	print ""
 
 
 if __name__ == "__main__":
@@ -384,17 +611,27 @@ if __name__ == "__main__":
 				#semnoidea(cur)
 				#os_clientnoidea(cur)
 				#countidea(cur)
-				#countreglm(cur)
+				countreglm(cur)
 				#noteasy(cur)
 				#zusatzfragenreglm(cur)
 				#countnotreglm(cur)
 				#countinst_notinst(cur)
 				#countjemalssend_ornot(cur)
+				#info_jemalssend(cur)
+				#info2_jemalssend(cur)
 				#counthaskontakt(cur)
+				#info_haskont(cur)
+				#info_nokont(cur)
 				#countwasinst(cur)
 				#countbewentf(cur)
-				countgeplant(cur)
-				countversucht(cur)
+				#info_bewentf(cur)
+				#info_nobewentf(cur)
+				#countgeplant(cur)
+				#countversucht(cur)
+				#info_vers(cur)
+				#info_novers(cur)
+				#info_noplan(cur)
+
 				
 			############################################
 			#                  end                     #

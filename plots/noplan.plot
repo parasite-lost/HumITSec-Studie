@@ -1,0 +1,17 @@
+WIng    11
+EEI     8
+Inf     7
+MB      4
+Elektrotechnik  3
+Mechatronik     3
+CEN     3
+MedTech         2
+IPEM    2
+CBI     2
+IP      2
+Energietechnik  2
+LSE     1
+Nanotechnologie         1
+Materialwissenschaften  1
+CE      1
+WInf    1
