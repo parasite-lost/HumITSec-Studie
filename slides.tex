@@ -88,7 +88,7 @@
 	\begin{itemize}
 		\item einfach zu erreichen
 		\item höchstwahrscheinlich aktive Nutzer von E-Mailkommunikation
-		\item ``zukünftige Elite Deutschlands''
+		%\item ``zukünftige Elite Deutschlands''
 		\item ca. 9000 Personen
 	\end{itemize}
 }
@@ -114,20 +114,40 @@
 \begin{frame}{Interesse an E-Mail-Kryptographie}
 	\begin{center}
 		\only<1>{Halten Sie das Verschlüsseln von E-Mails für sich persönlich für sinnvoll?\\
-			\vspace{1cm}
-				Ja: 51\% Nein: 41\% N/A: 08\%
+			\begin{tabular}{r|r}
+				Ja & $51\%$ \\
+				Nein & $41\%$ \\
+				keine Antwort & $8\%$
+			\end{tabular}
+			%\vspace{1cm}
+			%	Ja: 51\% Nein: 41\% N/A: 08\%
 		}
 		\only<2>{Halten Sie das Verschlüsseln von E-Mail im Allgemeinen für sinnvoll?\\
-			\vspace{1cm}
-				Ja: 87\% Nein: 06\% N/A: 07\%
+			\begin{tabular}{r|r}
+				Ja & $87\%$ \\
+				Nein & $6\%$ \\
+				keine Antwort & $7\%$
+			\end{tabular}
+			%\vspace{1cm}
+			%	Ja: 87\% Nein: 06\% N/A: 07\%
 		}
 		\only<3>{Hätten Sie gerne die Möglichkeit, mit Banken oder ähnlichen Institutionen/Unternehmen verschlüsselt zu kommunizieren?\\
-			\vspace{1cm}
-				Ja: 83\% Nein: 07\% N/A: 11\%
+			\begin{tabular}{r|r}
+				Ja & $83\%$ \\
+				Nein & $7\%$ \\
+				keine Antwort & $10\%$
+			\end{tabular}
+			%\vspace{1cm}
+			%	Ja: 83\% Nein: 07\% N/A: 11\%
 		}
 		\only<4>{Würden Sie sich wünschen, dass Unternehmen wie z.B.\ Banken intern verschlüsselt kommunizieren?\\
-			\vspace{1cm}
-				Ja: 85\% Nein: 06\% N/A: 09\%
+			\begin{tabular}{r|r}
+				Ja & $85\%$ \\
+				Nein & $6\%$ \\
+				keine Antwort & $9\%$
+			\end{tabular}
+			%\vspace{1cm}
+			%	Ja: 85\% Nein: 06\% N/A: 09\%
 		}
 	\end{center}
 \end{frame}
@@ -136,16 +156,31 @@
 \begin{frame}{Bekanntheit von Gefahren}
 	  \begin{center}
 		  \only<1>{ Eine unverschlüsselte E-Mail, die Sie versenden, kann auf dem Zustellweg von einem Angreifer mitgelesen und verändert werden. \\ Wussten Sie das?\\
-			  \vspace{1cm}
-      Ja: 82\% Nein: 15\% N/A: 02\%
+			  \begin{tabular}{r|r}
+				  Ja & $82\%$ \\
+				  Nein & $15\%$ \\
+				  keine Antwort & $2\%$
+			  \end{tabular}
+			%  \vspace{1cm}
+      %Ja: 82\% Nein: 15\% N/A: 02\%
   }
   \only<2>{ E-Mails können mit sehr geringem Aufwand unter falschem Absender versendet werden, wenn diese nicht kryptographisch signiert sind. \\ Wussten Sie das?\\
-	  \vspace{1cm}
-      Ja: 68\% Nein: 29\% N/A: 03\%
+	  \begin{tabular}{r|r}
+		  Ja & $68\%$ \\
+		  Nein & $29\%$ \\
+		  keine Antwort & $3\%$
+	  \end{tabular}
+	  %\vspace{1cm}
+      %Ja: 68\% Nein: 29\% N/A: 03\%
   }
   \only<3>{ Sollte ein Angreifer (Hacker) administrative Zugriffsrechte auf den Server einer Firma erlangen kann dieser alle unverschlüsselten E-Mails der Firma lesen oder sogar verändern. \\ Wussten Sie das?\\
-	  \vspace{1cm}
-      Ja: 84\% Nein: 14\% N/A: 03\%
+	  \begin{tabular}{r|r}
+		  Ja & $84\%$ \\
+		  Nein & $14\%$ \\
+		  keine Antwort & $3\%$
+	  \end{tabular}
+	  %\vspace{1cm}
+      %Ja: 84\% Nein: 14\% N/A: 03\%
   }
   \end{center}	
 \end{frame}
@@ -156,15 +191,16 @@
 
 \begin{frame}[fragile]{Fragebogenverlauf}
 	Der Rest des Fragebogens ist baumartig strukturiert, sodass eine Einteilung
-	in verschiedene Kategorien (diverse Ursachen für geringe Verbreitung von
-	E-Mail-Kryptographie) leichtfällt.
-
-	\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); Ast, der gerade betrachtet wird
-
-	\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Blatt mit Usability-Problem
-
-	\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); Blatt ohne Usability-Problem
-
+	in verschiedene Kategorien% (diverse Ursachen für geringe Verbreitung von
+	%E-Mail-Kryptographie)
+	leichtfällt.
+%
+%	\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); Ast, der gerade betrachtet wird
+%
+%	\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Blatt mit Usability-Problem
+%
+%	\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); Blatt ohne Usability-Problem
+%
 \end{frame}
 
 \begin{frame}{Fragebogenverlauf}
@@ -197,6 +233,14 @@
 					}
 				}
 			};
+			\draw node[annotation,below,fill=gray!15] at (7,-3) {%
+				\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); betrachteter Ast
+
+				\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Usability-Problem
+
+				\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); kein Usability-Problem
+			};
+
 			\only<1>{
 				\draw node[annotation,below,fill=gray!30] (Q) at (-6,2.3) {Wissen Sie, was E-Mail-Kryptographie ist?};
 				\draw [concept connection] (R) edge (Q);
@@ -245,8 +289,16 @@
 					}
 				}
 			};
+			\draw node[annotation,below,fill=gray!15] at (7,-3) {%
+				\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); betrachteter Ast
+
+				\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Usability-Problem
+
+				\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); kein Usability-Problem
+			};
+
 			\only<1>{
-				\draw node[annotation,below,fill=gray!30] (Q) at (-6,2.3) {Haben Sie Software für E-Mail-Kryptographie installiert?};
+				\draw node[annotation,below,fill=gray!30] (Q) at (-6,2.3) {Haben Sie derzeit Software für E-Mail-Kryptographie installiert?};
 				\draw [concept connection] (R) edge (Q);
 			}
 			\only<2>{
@@ -311,6 +363,14 @@
 					}
 				}
 			};
+			\draw node[annotation,below,fill=gray!15] at (7,-3) {%
+				\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); betrachteter Ast
+
+				\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Usability-Problem
+
+				\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); kein Usability-Problem
+			};
+
 			\only<1>{
 				\draw node[annotation,below,fill=gray!30] (Q) at (-6,2.3) {Haben Sie jemals eine verschlüsselte E-Mail verschickt?};
 				\draw [concept connection] (R) edge (Q);
@@ -322,8 +382,10 @@
 \end{frame}
 
 \begin{frame}{Details}
-	Unter den $17$ Befragten, die schon mindestens einmal eine verschlüsselte E-Mail versendet haben,
-	befinden sich $9$ Informatiker.
+	\begin{center}
+		Studienfächer
+		\includegraphics[scale=0.9]{plots/jemalssend.pdf}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Details}
@@ -384,6 +446,14 @@
 					}
 				}
 			};
+			\draw node[annotation,below,fill=gray!15] at (7,-3) {%
+				\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); betrachteter Ast
+
+				\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Usability-Problem
+
+				\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); kein Usability-Problem
+			};
+
 			\only<1>{
 				\draw node[annotation,below,fill=gray!30] (Q) at (-6,2.3) {Haben Sie Kontakte, mit denen Sie verschlüsslt kommunizieren können?};
 				\draw [concept connection] (R) edge (Q);
@@ -426,6 +496,14 @@
 					}
 				}
 			};
+			\draw node[annotation,below,fill=gray!15] at (7,-3) {%
+				\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); betrachteter Ast
+
+				\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Usability-Problem
+
+				\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); kein Usability-Problem
+			};
+
 			\node[annotation,below,fill=gray!50,scale=1.3] at (4,-6.4) {Keine Kontakte, mit denen verschlüsselte Kommunikation möglich ist, vorhanden.};
 	\end{tikzpicture}
 \end{frame}
@@ -461,8 +539,16 @@
 					}
 				}
 			};
+			\draw node[annotation,below,fill=gray!15] at (7,-3) {%
+				\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); betrachteter Ast
+
+				\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Usability-Problem
+
+				\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); kein Usability-Problem
+			};
+
 			\only<1>{
-				\draw node[annotation,below,fill=gray!30] (Q) at (-6,2.3) {War schon einmal Software für E-Mail-Kryptographie installiert?};
+				\draw node[annotation,below,fill=gray!30] (Q) at (-6,2.3) {Hatten Sie schon einmal Software für E-Mail-Kryptographie installiert?};
 				\draw [concept connection] (R) edge (Q);
 			}
 			\only<2>{
@@ -506,6 +592,14 @@
 					}
 				}
 			};
+			\draw node[annotation,below,fill=gray!15] at (7,-3) {%
+				\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); betrachteter Ast
+
+				\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Usability-Problem
+
+				\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); kein Usability-Problem
+			};
+
 			\node[annotation,below,fill=gray!50,scale=1.3] at (4,-6.4) {Software für E-Mail-Kryptographie war schon
 			einmal installiert, sie wurde jedoch nicht bewusst entfernt.};
 	\end{tikzpicture}
@@ -542,6 +636,14 @@
 					}
 				}
 			};
+			\draw node[annotation,below,fill=gray!15] at (7,-3) {%
+				\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); betrachteter Ast
+
+				\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Usability-Problem
+
+				\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); kein Usability-Problem
+			};
+
 			\only<1>{
 				\draw node[annotation,below,fill=gray!30] (Q) at (-6,2.3) {Haben Sie schon einmal eine Installation geplant?};
 				\draw [concept connection] (R) edge (Q);
@@ -594,6 +696,14 @@
 					}
 				}
 			};
+			\draw node[annotation,below,fill=gray!15] at (7,-3) {%
+				\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); betrachteter Ast
+
+				\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Usability-Problem
+
+				\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); kein Usability-Problem
+			};
+
 			\node[annotation,below,fill=gray!50,scale=1.3] at (4,-6.4) {Software für E-Mail-Kryptographie war noch nie installiert; Installation war geplant, jedoch nie
 			tatsächlich versucht.};
 	\end{tikzpicture}
@@ -630,6 +740,14 @@
 					}
 				}
 			};
+			\draw node[annotation,below,fill=gray!15] at (7,-3) {%
+				\tikz[baseline=-0.5ex] \fill[goldenrod] (0,0) circle (2ex); betrachteter Ast
+
+				\tikz[baseline=-0.5ex] \fill[red] (0,0) circle (2ex); Usability-Problem
+
+				\tikz[baseline=-0.5ex] \fill[blue!70] (0,0) circle (2ex); kein Usability-Problem
+			};
+
 			\node[annotation,below,fill=gray!50,scale=1.3] at (4,-6.4) {Software für E-Mail-Kryptographie war noch nie installiert; Installation war nie geplant.};
 	\end{tikzpicture}
 \end{frame}
@@ -659,10 +777,10 @@
 	}
 	\only<3>{
 		\begin{block}{andere Probleme}
-			Unwissen\\
-			Desinteresse\\
-			mangelnde Motivation\\
-			mangelnde Verbreitung von E-Mail-Kryptographie
+			Unwissen ($31.40\%$)\\
+			Desinteresse ($26.09\%$)\\
+			mangelnde Motivation ($8.70\%$)\\
+			mangelnde Verbreitung von E-Mail-Kryptographie (ca. $4.8\%$)
 		\end{block}
 	}
 \end{frame}
@@ -683,6 +801,7 @@
 	\begin{itemize}[<+->]
 		\item Andere Zielgruppen (alle Studierenden an der Universität, Beschäftigte in der Industrie, verschiedene Altersgruppen)
 		\item Ergänzung durch detailliertere Fragen
+		\item Auswertung von Zusammenhängen zwischen Angaben im ``Baum'' und Interessen- und Wissensfragen
 		\item Untersuchung einzelner Phänomene (Einfluss des Rufes von E-Mail-Kryptographie auf die Ergebnisse, o.Ä.)
 		\item Wieviele Studierende wissen nicht, was sie studieren? (Studienfach: ``Masters'', ``Lehramt'')\\
 			Wieviele Studierende können ihr Studienfach nicht richtig schreiben?
